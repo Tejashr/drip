@@ -321,10 +321,11 @@ export default function Navbar() {
       localStorage.removeItem("user_email");
       localStorage.removeItem("user_id");
       localStorage.removeItem("user_name");
-      window.location.reload();
     }
     setAnchorEl(null);
     handleMobileMenuClose();
+    navigate("/login");
+    window.location.reload();
   };
 
   const handleMobileMenuOpen = (event) => {

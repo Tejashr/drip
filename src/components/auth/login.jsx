@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Avatar,
   Box,
@@ -37,6 +37,11 @@ export default function Login() {
       window.location.reload();
     }
   };
+  let refer = useRef();
+
+  useEffect(() => {
+    refer.current.focus();
+  }, []);
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -71,6 +76,7 @@ export default function Login() {
               name="email"
               autoComplete="email"
               autoFocus
+              ref={refer}
             />
             <TextField
               margin="normal"
